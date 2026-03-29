@@ -29,6 +29,7 @@ export default function Home() {
 
   interface Project {
     link: string;
+    githubLink?: string;
     image: string;
     title: string;
     short: string;
@@ -101,7 +102,7 @@ export default function Home() {
       name: "Harish Nigam",
       title: "Full Stack Developer — MERN | PHP | WordPress",
       description: [
-        `Hello! ${greet}, I am Harish Nigam, a passionate Web Developer
+        `Hello! ${greet}, I am Harish Nigam, a passionate Full Stack Developer
                 and Computer Science Engineering graduate (Class of 2023) from
                 Shri Govindram Seksaria Institute of Technology and Science,
                 Indore.`,
@@ -224,7 +225,28 @@ export default function Home() {
       category: ["MERN", "PHP", "WordPress"],
       MERN: [
         {
+          link: "https://chatflow.harishnigam.cloud/",
+          githubLink: "https://github.com/harishnigam21/ChatFlow",
+          image: "chatflow.png",
+          title: "ChatFlow : A Real Time Messaging App",
+          short:
+            "ChatFlow is a full-stack real-time chat application built with React, Node.js, and Socket.io, featuring smart message grouping, media caching using IndexedDB, and real-time social interactions like follow requests and message deletion, all optimized for performance and scalability.",
+          long: `ChatFlow is a full-stack real-time chat application engineered to deliver a highly responsive and scalable messaging experience. The application leverages Socket.io for real-time communication, enabling instant message delivery, live seen-status updates, and synchronized message deletion across users.
+
+One of the core highlights of the system is its optimized message handling, where messages are grouped by year and date using MongoDB aggregation pipelines. This not only improves UI readability but also enables efficient retrieval of last messages and unread counts in a single query.
+
+The platform introduces a media optimization strategy by integrating Cloudinary for storage and IndexedDB for local caching of previously viewed media. This significantly reduces redundant network requests and improves performance, especially in media-heavy conversations.
+
+In addition to messaging, ChatFlow incorporates a social interaction layer where users can follow/unfollow others, send and manage requests, and receive real-time updates through socket events.
+
+The frontend is built with React and Redux Toolkit, ensuring scalable and predictable state management, while the backend uses Node.js, Express, and MongoDB (Mongoose) for robust API and database handling.
+
+Overall, ChatFlow demonstrates strong engineering practices including real-time architecture, efficient data handling, performance optimization, and modern UI/UX design.`,
+          tech: "React.js, Redux Toolkit, Node.js, Express.js, MongoDB, Mongoose, Socket.io, Cloudinary, IndexedDB, JWT, Axios, React Three Fiber (Three.js",
+        },
+        {
           link: "https://unitube.harishnigam.cloud/",
+          githubLink: "https://github.com/harishnigam21/UniTube",
           image: "unitube.png",
           title: "Unitube : A Post Hub",
           short:
@@ -232,68 +254,110 @@ export default function Home() {
           long: `UniTube is a full-stack video platform inspired by YouTube, built with a Node.js + Express backend and MongoDB (Mongoose) database. It supports secure user authentication using JWT and provides APIs for core features like channel management (create/update/delete channels, unique channel handlers), post management (upload videos and thumbnails, create/update/delete posts), and social interactions (subscribe/unsubscribe channels, like/dislike posts and comments).
 
 The backend uses middleware-based validation for request payloads, multer for handling file uploads (stored in an uploads/ folder), and MongoDB transactions for critical operations where multiple collections must stay consistent (example: channel creation updates both Channel and User documents). Feed loading is optimized with cursor-based pagination using createdAt sorting and indexed queries for scalability. Comments are stored in a separate collection and served as a nested tree structure using parent-child relationships.`,
-          tech: "Node.js, Express.js, MongoDB, Mongoose, JWT Authentication, Multer, MongoDB Transactions (Sessions), REST API, Middleware Validation,HTML, CSS, JavaScript, React.js, Redux, React Router",
+          tech: "Node js, Express js, MongoDB (Transaction, aggregation, sessions etc.), JWT Authentication, Multer, REST API, React.js, Redux, React Router",
         },
         {
-          link: "https://conversion.harishnigam.cloud/",
+          link: "https://taskflow.harishnigam.cloud/",
+          githubLink: "https://github.com/harishnigam21/TaskFlow",
+          image: "taskflow.png",
+          title: "TaskFlow : A Task Book",
+          short:
+            "TaskFlow is a full-stack task management application that enables users to securely manage tasks with authentication, optimized state handling, and a responsive UI.",
+          long: `TaskFlow is a full-stack task management application built to demonstrate scalable architecture, clean code practices, and modern web development techniques. It allows users to register, log in, and efficiently manage their daily tasks through a responsive and intuitive dashboard.
+
+The application uses secure JWT-based authentication to protect user data and implements complete CRUD operations for task management, including task creation, updating, deletion, and completion toggling. It also incorporates pagination and optimized state management using Redux to handle large datasets efficiently.
+
+On the frontend, TaskFlow leverages React with TypeScript for type safety and maintainability, along with reusable components and a custom API hook to streamline server communication. On the backend, it uses Node.js and Express with Prisma ORM to interact with a relational database, ensuring robust data handling and structured queries.
+
+Additional features such as form validation using Zod, centralized error handling, CORS configuration, request logging, and loading states enhance both developer experience and application performance. Overall, TaskFlow reflects a production-ready approach to building modern web applications.`,
+          tech: "Node.js, Express.js, Next.js, Redux Toolkit, TypeScript, Prisma ORM, MySQL, Zod, JWT Authentication",
+        },
+        {
+          link: "https://fileflux.harishnigam.cloud/",
+          githubLink: "https://github.com/harishnigam21/FileFlux",
           image: "conversion.png",
           title: "File / Media Conversion",
           short:
             "A conversion platform with guest and paid users, trial limits, and fingerprint/IP-based security.",
           long: "This MERN application allows users to convert PDFs, images, and media with advanced user control. Guest users have limited trials while paid users access unlimited conversions. To prevent abuse, fingerprinting and IP tracking ensure fair usage. The system supports queued file processing and cloud storage. UI is minimal and mobile-friendly, emphasizing speed and privacy.",
-          tech: "Prisma, Express, React, React Router, Node, TailwindCSS, JWT, REST API, Middleware Validation,RazorPay",
+          tech: "Prisma, Express,Node, React, React Router, TailwindCSS, JWT, REST API, RazorPay",
         },
         {
           link: "https://spodemy.harishnigam.cloud/",
+          githubLink: "https://github.com/harishnigam21/Spodemy",
           image: "spodemy.png",
           title: "Spodemy",
           short:
             "A sports platform combining e-commerce, social media, sports directory, and mini e-games for a complete sports ecosystem.",
           long: "Spodemy merges multiple verticals of the sports industry: an e-commerce store for sports products, a social hub for community engagement, a local search for academies and gyms, and an online mini-game section. Users can register, browse products, manage wishlists, purchase via secure checkout, and track orders. The platform also allows users to post, like, and comment on sports-related content, helping grow the community. Built with MERN stack, it uses Stripe for payments, JWT authentication for user security, and REST APIs for order and content management. Performance was optimized through server-side rendering and database indexing. The future roadmap includes tournament management and real-time chats.",
-          tech: "React.js, Node.js, Express, Prisma,cloudinary, Stripe, TailwindCSS",
+          tech: "React js, Node js, Express, Prisma, cloudinary, Stripe, TailwindCSS",
         },
         {
           link: "https://tracking-front-iota.vercel.app/",
+          githubLink: "https://github.com/harishnigam21/Transaction-Tracking",
           image: "TransactionTracker.png",
           title: "Transaction Tracker",
           short:
             "Track daily income and expenses with analytics dashboard and graphical insights.",
           long: "Transaction Tracker is a productivity-focused MERN application for managing personal finances. Users can log incomes, expenses, and view analytics using Chart.js. Each entry is categorized for clarity and summarized in graphs showing monthly and category-based statistics. Security and data integrity are ensured with JWT and input sanitization.",
-          tech: "React, Node.js, Express, MongoDB, Chart.js, TailwindCSS",
+          tech: "React, Node js, Express, MongoDB, Chart js, TailwindCSS",
+        },
+        {
+          link: "https://weather8472.vercel.app/",
+          githubLink: "https://github.com/harrysingh17022552/Weather-App",
+          image: "weather.png",
+          title: "Open Weather API",
+          short:
+            "A modern, responsive weather application that provides real-time weather updates, dynamic UI changes, and enhanced user experience with features like recent searches, location-based weather, and custom alerts.",
+          long: "A modern, responsive weather application that provides real-time weather updates, dynamic UI changes, and enhanced user experience with features like recent searches, location-based weather, and custom alerts.",
+          tech: "react, tailwind css, weather api, session storage",
         },
       ],
       PHP: [
         {
-          link: "https://adsexhibition.harishnigam.cloud/",
+          link: "https://adsexhibition.com/",
+          githubLink: "https://github.com/harishnigam21/ADSExhibition",
           image: "ADSExhibition.png",
           title: "Ads Exhibition",
           short:
-            "Advertising company website with admin dashboard, SMTP notifications, and lead management.",
-          long: "A PHP-MySQL website for an advertising agency, featuring a dynamic admin panel to manage galleries, testimonials, and client inquiries. Integrated SMTP for contact form notifications. The admin dashboard provides statistics and content management tools. It demonstrates solid PHP backend and clean UI.",
-          tech: "PHP, MySQL, HTML, CSS, JavaScript, SMTP",
+            "A dynamic exhibition and portfolio website with a responsive frontend, media gallery, and an admin panel for managing content, users, and interactions.",
+          long: `ADS Exhibition is a full-featured web platform designed to showcase exhibitions, innovations, and client portfolios through a modern and responsive interface. It includes multiple structured pages such as home, about, gallery, and contact, along with a media-rich gallery that supports both images and videos with client-side filtering and optimized rendering.
+
+The platform also provides a robust admin panel that enables administrators to manage contacts, subscribers, testimonials, and portfolio data efficiently. It integrates backend functionality for handling database operations, form submissions, and email triggers, ensuring smooth communication and data flow.
+
+Built with a modular PHP architecture and MySQL database, the project emphasizes scalability, maintainability, and clean routing using .htaccess. With reusable layout components and organized asset management, it serves as a solid foundation for exhibition websites, agency portfolios, or business presentation platforms.`,
+          tech: "php, mysql, javascript, bootstrap, html, css",
         },
         {
           link: "https://flipinindia.in/",
+          githubLink: "https://github.com/harishnigam21/FlipInIndia",
           image: "FlipInIndia.png",
           title: "FlipInIndia",
           short:
-            "Digital advertising platform with admin control, gallery management, and client contact forms.",
-          long: "FlipInIndia helps agencies manage campaigns and monitor leads. Includes a custom-built CMS in PHP with CRUD operations, login authentication, and SEO tools. Optimized image uploads and simplified content workflows for admins.",
-          tech: "PHP, MySQL, HTML, CSS, JavaScript",
+            "A business website with gallery, pickup request system, and admin dashboard for managing content, users, and website data.",
+          long: `FlipInIndia is a comprehensive web platform built to present business services, company details, and client engagement features in a modern and responsive way. The website includes multiple structured pages such as home, about, services, gallery, and contact, along with a dynamic gallery that displays factory images and media content.
+
+The platform includes user interaction features like contact forms and pickup request forms, which are integrated with backend models to store data in the database. It ensures smooth handling of user inquiries and service requests.
+
+A powerful admin panel is included to manage all aspects of the website, including contacts, pickup requests, testimonials, store content, and profiles. The system is built using a modular PHP architecture with MySQL database integration and includes a complete database dump for quick setup.
+
+With structured templates, reusable components, and integrated frontend plugins, FlipInIndia serves as a scalable foundation for business websites, service platforms, or portfolio-based applications.`,
+          tech: "php, mysql, javascript, bootstrap, html, css",
         },
         {
           link: "/",
+          githubLink: "https://github.com/harishnigam21/Resume_Builder",
           image: "portfolio_bg.jpeg",
           title: "Resume Builder",
           short:
             "Online resume creation platform allowing login, template selection, and PDF generation.",
           long: "This project enables users to log in, choose from resume templates, and export professional resumes in PDF format. It maintains user history, offers editing functionality, and allows cloning previous resumes. Created to simplify resume creation for job seekers.",
-          tech: "PHP, MySQL, HTML, CSS, JS",
+          tech: "php, mysql, javascript, bootstrap, html, css",
         },
       ],
       WordPress: [
         {
-          link: "https://practicalrecovery.harishnigam.cloud/",
+          link: "https://www.practicalrecovery.com/",
           image: "practicalRecovery.png",
           title: "Practical Recovery",
           short:
@@ -302,7 +366,7 @@ The backend uses middleware-based validation for request payloads, multer for ha
           tech: "WordPress, Elementor, PHP, SEO Plugins",
         },
         {
-          link: "https://azonecenter.harishnigam.cloud/",
+          link: "https://azonecenter.com/",
           image: "azone.png",
           title: "Azone Center",
           short:

@@ -1,5 +1,7 @@
 @import "tailwindcss";
-
+body {
+  font-family: ui-sans-serif, system-ui, -apple-system;
+}
 body,
 #root,
 :root {
@@ -28,6 +30,11 @@ html{
 button {
   cursor: pointer;
 }
+.noscrollbar::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
 ::-webkit-scrollbar {
   width: 6px;
 }
