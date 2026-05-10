@@ -161,6 +161,17 @@ export default function Home() {
 
     experience: [
       {
+        role: "Full Stack Developer",
+        company: "DHHANASHRI AUTOWORKFLOW LLP",
+        period: "Nov 2025 - April 2026",
+        points: [
+          "Developed and maintained web applications using React, Next, Vue & PHP.",
+          "Build Role based dashboard using MERN stack for better optimization and Scalability",
+          "Built several advertising websites & E-commerce website using wordpress.",
+          "Managed hosting, DNS, and domain–hosting connections.",
+        ],
+      },
+      {
         role: "Full Stack Web Developer Intern",
         company: "Creative Squadz",
         period: "Jul 2025 – Nov 2025",
