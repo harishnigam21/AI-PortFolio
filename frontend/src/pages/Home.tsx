@@ -173,7 +173,7 @@ export default function Home() {
       },
       {
         role: "Full Stack Web Developer Intern",
-        company: "Creative Squadz",
+        company: "CREATIVE SQUADZ",
         period: "Jul 2025 – Nov 2025",
         points: [
           "Built a MERN-based File/Media Conversion platform with guest/paid models and secure tracking.",
@@ -184,7 +184,7 @@ export default function Home() {
       },
       {
         role: "MERN Stack Developer Intern",
-        company: "Labmentix",
+        company: "LABMENTIX",
         period: "Jan 2025 – Jun 2025",
         points: [
           "Contributed to live e-commerce and social-media MERN projects.",
